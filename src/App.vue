@@ -10,7 +10,6 @@
 
 <script lang="js">
 import getService from './apiService/getService.js'
-import qs from "qs";
 import { Observable } from "rxjs/Rx";
 import { from, range, merge, concat, interval, of } from "rxjs";
 import {
@@ -50,9 +49,8 @@ export default {
       let popUpGroupList$ = getService.getHlmUsers(this.baseUrl)
                 .subscribe(
                     next => {
-                      debugger
+                      
                       this.users=next.response.hlm_users
-                      console.log(next)
                     },
                     error => {
                       console.log(error)},
