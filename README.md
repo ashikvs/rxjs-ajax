@@ -1,4 +1,4 @@
-# prototype
+# vue prototype project 
 
 ## Project setup
 ```
