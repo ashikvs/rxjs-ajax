@@ -4,62 +4,19 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about" >About</router-link>
     </div>
-    <router-view :users="users"/>
+    <router-view />
   </div>
 </template>
 
 <script lang="js">
-import getService from './apiService/getService.js'
-import { Observable } from "rxjs/Rx";
-import { from, range, merge, concat, interval, of } from "rxjs";
-import {
-    map,
-    tap,
-    filter,
-    flatMap,
-    refCount,
-    distinct,
-    contains,
-    catchError,
-    pluck,
-    publishReplay,
-    retry,
-    last,
-    first,
-    toArray,
-    concatAll
-} from "rxjs/operators";
 
 
 export default {
   data() {
     return {
-     baseUrl: process.env.VUE_APP_BASE_URL,
-     users:[]
+    
     }
-  },
-
-
-  created() {
-      console.log('main-created');
-      this.getData()
-    },
-    methods: {
-    getData(){
-      let popUpGroupList$ = getService.getHlmUsers(this.baseUrl)
-                .subscribe(
-                    next => {
-                      
-                      this.users=next.response.hlm_users
-                    },
-                    error => {
-                      console.log(error)},
-                    () => console.log("recieved hlm users")
-                );
-            
-    }
-
-      }
+  }
     
   }
 

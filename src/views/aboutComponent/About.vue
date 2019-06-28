@@ -9,18 +9,17 @@
 </ul>
   </div>
 </template>
-<script lang="ts">
+<script lang="js">
 
+export default {
 
-export default  {
+  props: ['users'],
 
-  props:['users'],
-
-   created() {
-    console.log('About-created',this.users)
-    } ,
+  created() {
+    console.log('About-created', this.users)
+  },
   destroyed() {
     console.log('About-destroyed')
-    }
+  }
 }
 </script>
