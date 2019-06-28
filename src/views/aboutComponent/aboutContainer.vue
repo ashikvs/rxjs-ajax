@@ -48,7 +48,8 @@ name: "AboutContainer",
     
   destroyed() {
     console.log('aboutContainer-destroyed');
-    this.subscribe.unsubscribe()
+    this.subscribe.unsubscribe();
+    console.log(this.users)
   },
     methods: {
         getData() {
