@@ -12,7 +12,9 @@ name: "HomeContainer",
         "home-component": home,
     },
     data() {
-        return {}
+        return {
+            
+        }
     }
 }
 </script>

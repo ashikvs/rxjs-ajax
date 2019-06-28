@@ -5,8 +5,9 @@
 </template>
 
 <script>
+//import { SubSink } from './subsink';
 import getService from '../../apiService/getService'
-import { Observable } from "rxjs/Rx";
+import { Observable,Subscription } from "rxjs/Rx";
 import { from, range, merge, concat, interval, of } from "rxjs";
 import {
     map,
@@ -28,6 +29,7 @@ import {
 
 import about from './About'
 export default {
+
 name: "AboutContainer",
     components: {
         "about-component": about,
@@ -35,16 +37,22 @@ name: "AboutContainer",
     data() {
         return {
             baseUrl: process.env.VUE_APP_BASE_URL,
-            users: []
+            users: [],
+            subscribe:Subscription     
         }
     },
     created() {
-        console.log('about-created');
+        console.log('aboutContainer-created');
         this.getData()
     },
+    
+  destroyed() {
+    console.log('aboutContainer-destroyed');
+    this.subscribe.unsubscribe()
+  },
     methods: {
         getData() {
-            let popUpGroupList$ = getService.getHlmUsers(this.baseUrl)
+            this.subscribe= getService.getHlmUsers(this.baseUrl)
                 .subscribe(
                     next => {
                         this.users = next.response.hlm_users
