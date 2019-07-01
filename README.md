@@ -12,7 +12,7 @@ npm run serve
 ### note
 ```
 env portnumber and serving port number should be same``
-
+```
 ### Compiles and minifies for production
 ```
 npm run build
