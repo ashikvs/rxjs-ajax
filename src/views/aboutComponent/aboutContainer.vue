@@ -5,7 +5,7 @@
 </template>
 
 <script>
-//import { SubSink } from './subsink';
+import { SubSink } from 'subsink';
 import getService from '../../apiService/getService'
 import { Observable,Subscription } from "rxjs/Rx";
 import { from, range, merge, concat, interval, of } from "rxjs";
@@ -38,7 +38,8 @@ name: "AboutContainer",
         return {
             baseUrl: process.env.VUE_APP_BASE_URL,
             users: [],
-            subscribe:Subscription     
+            subscribe:Subscription,
+            subs : new SubSink()  
         }
     },
     created() {
@@ -48,12 +49,12 @@ name: "AboutContainer",
     
   destroyed() {
     console.log('aboutContainer-destroyed');
-    this.subscribe.unsubscribe();
+    this.subs.unsubscribe();
     console.log(this.users)
   },
     methods: {
         getData() {
-            this.subscribe= getService.getHlmUsers(this.baseUrl)
+            this.subs.sink= getService.getHlmUsers(this.baseUrl)
                 .subscribe(
                     next => {
                         this.users = next.response.hlm_users
