@@ -8,7 +8,10 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm run serve
+
+### note
 ```
+env portnumber and serving port number should be same``
 
 ### Compiles and minifies for production
 ```
