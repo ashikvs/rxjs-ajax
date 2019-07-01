@@ -7,15 +7,18 @@ import {of} from 'rxjs';
 
 export default {
 
-    getHlmUsers(baseurl) {
-        debugger
+    postHlmUsers(baseurl) {
+        
         const users = ajax({
-            url:baseurl+'/hlm-users.json',
-            method: 'GET',
+            url:baseurl,
+            method: 'POST',
             headers: {
                 'Accept': 'application/json'
+            },
+            body:{
+                'Content-Type': 'application/json'
             }
         });
-        return users;
+       
     }
 }

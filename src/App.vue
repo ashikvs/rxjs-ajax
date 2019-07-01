@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about" >About</router-link>
+       <v-btn class="info" @click="$router.push('/')">Home</v-btn> |
+      <v-btn class="info" @click="$router.push('/about')"  >About</v-btn> |
+      <v-btn class="info" @click="$router.push('/csrf')" >Api calls</v-btn> 
+      <v-app>
+          <router-view/>
+      </v-app>
+     
     </div>
-    <router-view />
+   
   </div>
 </template>
 

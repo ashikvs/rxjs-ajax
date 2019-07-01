@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import HomeContainer from "./views/homeComponent/homeContainer.vue";
 import AboutContainer from "./views/aboutComponent/aboutContainer.vue";
+import CsrfContainer from "./views/csrfComponent/csrfContainer.vue";
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: "/about",
       name: "about",
       component: AboutContainer
+    },
+    {
+      path: "/csrf",
+      name: "CsrfContainer",
+      component: CsrfContainer
     },
     // {
       //path: "/about",
