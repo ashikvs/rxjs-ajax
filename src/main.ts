@@ -8,7 +8,6 @@ import { SubSink } from 'subsink';
 import VueRx from 'vue-rx';
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
-
 Vue.use(Vuetify)
 
 // VueRx can use libraries other than RxJS
